@@ -1,2 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+using Sixfortyfour.ConsoleApp;
+
+var person = new Person() { Id = 1, Name = "Bob" };
+
+Console.WriteLine(person.ToString());
+
+Console.ReadLine();
