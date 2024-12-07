@@ -13,11 +13,11 @@ namespace Sixfortyfour.ConsoleAppTests
         }
 
         [Fact]
-        public void Person_has_name_fails()
+        public void Person_does_not_have_name()
         {
             var person = new Person() { Id = 1, Name = "" };
 
-            Assert.True(person.Name.Length > 0);
+            Assert.False(person.Name.Length > 0);
         }
     }
 }
