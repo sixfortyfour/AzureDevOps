@@ -10,13 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-- task: DotNetCoreCLI@2
+  checkout: self
+  submodules: true
+  task: AzureStaticWebApp@0
   inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-- task: DotNetCoreCLI@2
+      app_location: '/src'
+- task: AzureStaticWebApp@0
   inputs:
-    command: 'test'
-    projects: '**/*.csproj'
-    testRunTitle: 'Console App Unit Tests'
+    app_location: '/src'
+    output_location: 'wwwroot'
+    azure_static_web_apps_api_token:$(deployment_token_static) 
